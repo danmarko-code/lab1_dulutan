@@ -3,89 +3,334 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dan Marko Dulutan | Portfolio</title>
+    <title>Dan Marko Dulutan | Portfolio & Playground</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <header>
-        <h1>Dan Marko Dulutan</h1>
-        <p>IT Student & Aspiring Software Developer</p>
-        <nav>
-            <ul>
+    <!-- Smooth Animated Background Scene -->
+    <div class="parallax-stage" id="stage">
+        <div class="layer sky-layer">
+            <div class="stars"></div>
+        </div>
+        <div class="layer celestial-layer">
+            <div class="celestial-body" id="celestial"></div>
+        </div>
+        <div class="layer clouds-mid">
+            <svg class="cloud cloud-1" viewBox="0 0 200 80" fill="currentColor">
+                <path d="M20,60 Q30,20 70,30 Q100,10 130,30 Q170,20 180,60 Z"/>
+            </svg>
+            <svg class="cloud cloud-2" viewBox="0 0 240 90" fill="currentColor">
+                <path d="M30,70 Q45,25 90,35 Q125,15 160,35 Q205,25 215,70 Z"/>
+            </svg>
+        </div>
+        <!-- Replaced the harsh wave with a soft, ambient glow -->
+        <div class="ambient-ground-glow"></div>
+    </div>
+
+    <!-- Floating Frosted Glass Navbar -->
+    <header class="glass-nav-wrapper">
+        <nav class="glass-nav">
+            <div class="nav-profile">
+                <div class="avatar-ring">DM</div>
+                <span class="nav-location">📍 Cavite, PH</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#hero">Home</a></li>
                 <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#work">Work</a></li>
+                <li><a href="#playground">Playground</a></li>
             </ul>
+            <div class="nav-actions">
+                <button id="themeToggle" class="theme-btn" aria-label="Toggle Night Mode">🌙</button>
+                <a href="#contact" class="btn-cta">Work with me</a>
+            </div>
         </nav>
     </header>
 
     <main>
-        <section id="about">
-            <h2>About Me</h2>
-            <p>I am an Information Technology student passionate about software development, systems programming, and building functional applications.</p>
+        <!-- Hero Section -->
+        <section id="hero" class="hero-section">
+            <div class="hero-content">
+                <span class="sub-badge">● HELLO, I'M DAN MARKO —</span>
+                <h1 class="hero-title">
+                    <span class="serif-text">Developer</span> who
+                    <div class="audio-player-pill" id="audioPlayer">
+                        <div class="turntable left-deck" id="deck1">
+                            <div class="vinyl"></div>
+                        </div>
+                        <div class="player-controls">
+                            <span class="track-name">My creative journey, looped</span>
+                            <div class="time-and-btn">
+                                <span class="time-display" id="timeDisplay">0:00</span>
+                                <button class="btn-play" id="playBtn" aria-label="Play/Pause audio">▶</button>
+                                <span class="time-display">2:30</span>
+                            </div>
+                        </div>
+                        <div class="turntable right-deck" id="deck2">
+                            <div class="vinyl"></div>
+                        </div>
+                    </div>
+                    <span class="serif-text">Builds</span>
+                </h1>
+                <p class="hero-bio">Bridging software systems, custom logic algorithms, and modern interface aesthetics.</p>
+            </div>
         </section>
 
-        <section id="skills">
-            <h2>Technical Skills</h2>
-            <ul>
-                <li>Java & Object-Oriented Programming</li>
-                <li>Python & Scripting</li>
-                <li>Database Management (MySQL)</li>
-                <li>Web Development (HTML, CSS, JavaScript)</li>
-                <li>Hardware & IoT (Arduino)</li>
-            </ul>
+        <!-- About & Credentials Section -->
+        <section id="about" class="about-section">
+            <div class="glass-panel about-grid">
+                <div class="about-text">
+                    <h2>About Me</h2>
+                    <p>I am a second-year Information Technology (BSIT) student at Cavite State University with a deep passion for software development and system architecture.</p>
+                    <p>Beyond writing code, I bring a highly disciplined work ethic to my technical projects—a drive I developed during my previous experience working as a construction worker. Whether I am optimizing backend queries, building IoT safety hardware, or refining UI vectors, I focus on building resilient, functional systems.</p>
+                    <a href="https://www.linkedin.com/" target="_blank" class="btn-cta linkedin-btn">Connect on LinkedIn ↗</a>
+                </div>
+                <div class="about-credentials">
+                    <div class="cred-block">
+                        <h3>Education</h3>
+                        <ul>
+                            <li><strong>Cavite State University</strong></li>
+                            <li>Bachelor of Science in Information Technology (2nd Year)</li>
+                        </ul>
+                    </div>
+                    <div class="cred-block">
+                        <h3>Core Stack & Tools</h3>
+                        <div class="card-tags">
+                            <span>Java (OOP)</span>
+                            <span>Python</span>
+                            <span>MySQL</span>
+                            <span>Bash Scripting</span>
+                            <span>C++ / Arduino</span>
+                            <span>Figma & Canva</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
 
-        <section id="projects">
-            <h2>Featured Projects</h2>
+        <!-- Featured Work Showcase Section -->
+        <section id="work" class="work-section">
+            <div class="section-heading">
+                <p class="section-tag">SELECTED WORKS</p>
+                <h2>Projects & Systems</h2>
+            </div>
 
-            <article>
-                <h3>CvSU Secret Files</h3>
-                <p>A menu-driven database and record management system built using custom data structures, linked lists, and local file I/O operations.</p>
-                <p><strong>Tech:</strong> Java, Data Structures</p>
-            </article>
+            <div class="work-grid">
+                <!-- Project 1 -->
+                <article class="work-card tilt-card">
+                    <div class="card-visual">
+                        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=600&q=80" alt="P2P Help App Interface" class="project-img">
+                    </div>
+                    <div class="card-body">
+                        <div class="card-meta"><span class="year">2026</span><span class="role">Fullstack Development</span></div>
+                        <h3>Peer-to-Peer Help App</h3>
+                        <p>A collaborative web platform connecting users for real-time problem solving, resource sharing, and structured peer assistance.</p>
+                        <div class="card-tags"><span>Web App</span><span>UI/UX</span><span>Matchmaking</span></div>
+                    </div>
+                </article>
 
-            <article>
-                <h3>Smart Classroom Safety System</h3>
-                <p>An IoT-enabled safety prototype using sensor arrays for real-time temperature and hazard monitoring with automated alert signals.</p>
-                <p><strong>Tech:</strong> Arduino, C++, Sensors</p>
-            </article>
+                <!-- Project 2 -->
+                <article class="work-card tilt-card">
+                    <div class="card-visual">
+                        <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=600&q=80" alt="Terminal Code Database" class="project-img">
+                    </div>
+                    <div class="card-body">
+                        <div class="card-meta"><span class="year">2026</span><span class="role">Data Structures</span></div>
+                        <h3>CvSU Secret Files</h3>
+                        <p>Menu-driven terminal record management system implementing custom LinkedList structures and secured local file I/O operations.</p>
+                        <div class="card-tags"><span>Java</span><span>Linked Lists</span><span>Terminal</span></div>
+                    </div>
+                </article>
 
-            <article>
-                <h3>Automated Banking Application</h3>
-                <p>A core banking transaction platform implementing abstraction, account inheritance, and custom validation exceptions.</p>
-                <p><strong>Tech:</strong> Java, OOP</p>
-            </article>
+                <!-- Project 3 -->
+                <article class="work-card tilt-card">
+                    <div class="card-visual">
+                        <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=600&q=80" alt="Algorithm visualization" class="project-img">
+                    </div>
+                    <div class="card-body">
+                        <div class="card-meta"><span class="year">2026</span><span class="role">System Architecture</span></div>
+                        <h3>Scholarship Sorting Engine</h3>
+                        <p>An academic applicant evaluation program utilizing rigid descending selection sort logic, OOP abstraction, and data array processing.</p>
+                        <div class="card-tags"><span>Java</span><span>Selection Sort</span><span>OOP</span></div>
+                    </div>
+                </article>
+
+                <!-- Project 4 (New) -->
+                <article class="work-card tilt-card">
+                    <div class="card-visual">
+                        <img src="https://images.unsplash.com/photo-1510915361894-db8b60106cb1?auto=format&fit=crop&w=600&q=80" alt="Audio Waveform" class="project-img">
+                    </div>
+                    <div class="card-body">
+                        <div class="card-meta"><span class="year">2025</span><span class="role">Audio Processing</span></div>
+                        <h3>FretBoard Audio Analyzer</h3>
+                        <p>A Python-based script that analyzes electric guitar audio inputs to generate real-time chord mappings and frequency visualizations.</p>
+                        <div class="card-tags"><span>Python</span><span>DSP</span><span>Scripting</span></div>
+                    </div>
+                </article>
+
+                <!-- Project 5 (New) -->
+                <article class="work-card tilt-card">
+                    <div class="card-visual">
+                        <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=600&q=80" alt="Inventory Dashboard" class="project-img">
+                    </div>
+                    <div class="card-body">
+                        <div class="card-meta"><span class="year">2025</span><span class="role">Database Management</span></div>
+                        <h3>DoughMetrics POS</h3>
+                        <p>A point-of-sale inventory management system built to track bakery ingredients, automated dough resting timers, and sales metrics.</p>
+                        <div class="card-tags"><span>Java</span><span>MySQL</span><span>CRUD</span></div>
+                    </div>
+                </article>
+
+                <!-- Project 6 (New) -->
+                <article class="work-card tilt-card">
+                    <div class="card-visual">
+                        <img src="https://images.unsplash.com/photo-1622228514589-9eb170d10c85?auto=format&fit=crop&w=600&q=80" alt="Sports Match App" class="project-img">
+                    </div>
+                    <div class="card-body">
+                        <div class="card-meta"><span class="year">2024</span><span class="role">Web Application</span></div>
+                        <h3>CourtMatch Scheduler</h3>
+                        <p>A responsive athletic scheduling platform designed to connect local padel and pickleball players based on skill tiers and availability.</p>
+                        <div class="card-tags"><span>HTML/CSS</span><span>JS</span><span>API</span></div>
+                    </div>
+                </article>
+            </div>
         </section>
 
-        <section id="contact">
-            <h2>Get in Touch</h2>
-            <form id="contact-form">
-                <div>
-                    <label for="name">Name:</label><br>
-                    <input type="text" id="name" name="name" required>
+        <!-- Animation & Transition Playground -->
+        <section id="playground" class="playground-section">
+            <div class="section-heading">
+                <p class="section-tag">LABORATORY</p>
+                <h2>Modern Animation Sandbox (8)</h2>
+                <p class="section-desc">Interactive physics, elastic curves, and custom transitions powered by native code.</p>
+            </div>
+
+            <div class="playground-grid">
+                <!-- Experiment 1 -->
+                <div class="lab-card">
+                    <div class="lab-header">
+                        <h4>01. Elastic Spring</h4>
+                        <span class="lab-pill">Cubic-Bezier</span>
+                    </div>
+                    <div class="interactive-stage">
+                        <button class="spring-btn magnetic-elem">Hover & Click</button>
+                    </div>
                 </div>
-                <br>
-                <div>
-                    <label for="email">Email:</label><br>
-                    <input type="email" id="email" name="email" required>
+
+                <!-- Experiment 2 -->
+                <div class="lab-card">
+                    <div class="lab-header">
+                        <h4>02. Pixel Dissolve</h4>
+                        <span class="lab-pill">Canvas Grid</span>
+                    </div>
+                    <div class="interactive-stage">
+                        <div class="pixel-box" id="pixelContainer">
+                            <canvas id="pixelCanvas" width="220" height="120"></canvas>
+                        </div>
+                    </div>
                 </div>
-                <br>
-                <div>
-                    <label for="message">Message:</label><br>
-                    <textarea id="message" name="message" rows="4" required></textarea>
+
+                <!-- Experiment 3 -->
+                <div class="lab-card">
+                    <div class="lab-header">
+                        <h4>03. Gyroscopic 3D</h4>
+                        <span class="lab-pill">Perspective</span>
+                    </div>
+                    <div class="interactive-stage">
+                        <div class="tilt-box magnetic-elem">
+                            <div class="inner-shine"></div>
+                            <span>Tilt Me</span>
+                        </div>
+                    </div>
                 </div>
-                <br>
-                <button type="submit">Send Message</button>
-            </form>
-            <p id="form-status"></p>
+
+                <!-- Experiment 4 -->
+                <div class="lab-card">
+                    <div class="lab-header">
+                        <h4>04. Neon Ripple</h4>
+                        <span class="lab-pill">DOM & Gradient</span>
+                    </div>
+                    <div class="interactive-stage dark-stage" id="neonStage">
+                        <div class="spotlight" id="spotlight"></div>
+                        <span class="dark-text">Click around</span>
+                    </div>
+                </div>
+
+                <!-- Experiment 5: Scroll Animation (Now fixed size) -->
+                <div class="lab-card">
+                    <div class="lab-header">
+                        <h4>05. Scroll Observer</h4>
+                        <span class="lab-pill">Scroll Event</span>
+                    </div>
+                    <div class="interactive-stage scroll-stage" id="scrollStage">
+                        <div class="scroll-tracker" id="scrollTracker">
+                            <span>Scrolling</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Experiment 6: Blur & Slide Reveal -->
+                <div class="lab-card">
+                    <div class="lab-header">
+                        <h4>06. Focus Reveal</h4>
+                        <span class="lab-pill">Filter & Transform</span>
+                    </div>
+                    <div class="interactive-stage blur-stage">
+                        <div class="blur-content">
+                            <span class="hidden-text">Secret Unlocked!</span>
+                        </div>
+                        <div class="blur-overlay">Hover to Focus</div>
+                    </div>
+                </div>
+
+                <!-- Experiment 7: Glitch Text -->
+                <div class="lab-card">
+                    <div class="lab-header">
+                        <h4>07. Cyber Glitch</h4>
+                        <span class="lab-pill">Keyframes</span>
+                    </div>
+                    <div class="interactive-stage glitch-stage">
+                        <div class="glitch-text" data-text="SYSTEM ERROR">SYSTEM ERROR</div>
+                    </div>
+                </div>
+
+                <!-- Experiment 8: Expanding Flex Accordion -->
+                <div class="lab-card">
+                    <div class="lab-header">
+                        <h4>08. Flex Accordion</h4>
+                        <span class="lab-pill">Flexbox Transition</span>
+                    </div>
+                    <div class="interactive-stage flex-accordion-stage">
+                        <div class="flex-slice" style="background:#38bdf8;"></div>
+                        <div class="flex-slice" style="background:#f6ad55;"></div>
+                        <div class="flex-slice" style="background:#0a66c2;"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact-section">
+            <div class="contact-card glass-panel">
+                <h2>Let's build something exceptional.</h2>
+                <p>Feel free to reach out for collaborations, software inquiries, or interface experiments.</p>
+                <form id="contact-form">
+                    <div class="form-row">
+                        <input type="text" id="name" placeholder="Your Name" required>
+                        <input type="email" id="email" placeholder="Your Email" required>
+                    </div>
+                    <textarea id="message" rows="4" placeholder="Your Message" required></textarea>
+                    <button type="submit" class="btn-cta submit-btn">Send Message</button>
+                </form>
+                <p id="form-status"></p>
+            </div>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2026 Dan Marko Dulutan. All rights reserved.</p>
+        <p>&copy; 2026 Dan Marko Dulutan. Designed & Engineered locally.</p>
     </footer>
 
+    <script src="script.js"></script>
 </body>
 </html>
